@@ -5,6 +5,7 @@ let
 	create_symlink = path: config.lib.file.mkOutOfStoreSymlink path;
 	apps = [
       		"alacritty"
+		"hypr"
 	];
 	configs = builtins.listToAttrs(
 		map ( x :{
