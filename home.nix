@@ -21,7 +21,6 @@ in
 	programs.bash = {
 		enable = true;
 		shellAliases = {
-			btw = "echo i use nixos btw";
 			nrs = "sudo nixos-rebuild switch";
 			nrsf = "sudo nixos-rebuild switch --flake";
 		};

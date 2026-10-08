@@ -26,7 +26,7 @@ hl.monitor({
 local terminal    = "alacritty"
 local fileManager = "dolphin"
 local menu        = "hyprlauncher"
-local browser     = "zen-browser"
+local browser     = "chromium"
 
 
 -------------------
@@ -248,13 +248,13 @@ local closeWindowBind = hl.bind(mainMod .. " + W", hl.dsp.window.close())
 hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + F", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(browser))
-hl.bind(mainMod .. " + SHIFT + B", hl.dsp.exec_cmd("$browser --private-window"))
-hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("chromium --app=https://music.youtube.com"))
-hl.bind(mainMod .. " + A", hl.dsp.exec_cmd("chromium --app=https://github.com"))
-hl.bind(mainMod .. " + E", hl.dsp.exec_cmd("chromium --app=https://mail.google.com/mail/u/0/#inbox"))
-hl.bind(mainMod .. " + SHIFT + Y", hl.dsp.exec_cmd("chromium --app=https://youtube.com"))
-hl.bind(mainMod .. " + SHIFT + T", hl.dsp.exec_cmd("chromium --app=https://twitch.tv"))
-hl.bind(mainMod .. " + SHIFT + D", hl.dsp.exec_cmd("chromium --app=https://discord.com/channels/@me"))
+hl.bind(mainMod .. " + SHIFT + B", hl.dsp.exec_cmd("$browser --private"))
+hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("$browser --app=https://music.youtube.com"))
+hl.bind(mainMod .. " + A", hl.dsp.exec_cmd("$browser --app=https://github.com"))
+hl.bind(mainMod .. " + E", hl.dsp.exec_cmd("$browser --app=https://mail.google.com/mail/u/0/#inbox"))
+hl.bind(mainMod .. " + SHIFT + Y", hl.dsp.exec_cmd("$browser --app=https://youtube.com"))
+hl.bind(mainMod .. " + SHIFT + T", hl.dsp.exec_cmd("$browser --app=https://twitch.tv"))
+hl.bind(mainMod .. " + SHIFT + D", hl.dsp.exec_cmd("$browser --app=https://discord.com/channels/@me"))
 
 -- hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 -- hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
