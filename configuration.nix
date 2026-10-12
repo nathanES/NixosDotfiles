@@ -68,13 +68,12 @@
     ];
   };
 
-  programs.chromium.enable = true;
-
   environment.systemPackages = with pkgs; [
     vim
     wget
     foot
     kitty # For hyprland
+    chromium
     waybar
     git
     hyprpaper
