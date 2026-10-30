@@ -9,8 +9,8 @@
     home.packages = with pkgs; [
         wget
         curl
-        hyprpaper
         alacritty
+        ani-cli
     ];
 
 	programs.bash = {
