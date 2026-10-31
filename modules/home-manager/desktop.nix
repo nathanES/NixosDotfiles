@@ -2,7 +2,7 @@
 {
     imports = [
         ./common.nix
-	caelestia-shell.homeManagerModules.default
+        caelestia-shell.homeManagerModules.default
     ];
 
     # Packages only for desktop host
