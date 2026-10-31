@@ -10,11 +10,11 @@
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
 
-    #programs.bash.loginShellInit = ''
-        #if [ "$(tty)" = "/dev/tty1" ] && [ -z "$HYPRLAND_INSTANCE_SIGNATURE" ]; then
-        #exec start-hyprland
-        #fi
-    #'';
+    programs.bash.loginShellInit = ''
+        if [ "$(tty)" = "/dev/tty1" ] && [ -z "$HYPRLAND_INSTANCE_SIGNATURE" ]; then
+            exec start-hyprland
+        fi
+    '';
 
     programs.hyprland = {
         enable = true;
