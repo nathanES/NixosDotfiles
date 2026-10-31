@@ -21,14 +21,11 @@
         xwayland.enable = true;
     };
 
-    programs.chromium = {
-	enable = true;
-    };
-
     environment.systemPackages = with pkgs; [
         vim
         kitty # For hyprland
         git
+	chromium
     ];
 
     system.stateVersion = "26.05"; # NEVER delete this line

@@ -27,4 +27,10 @@
 
     # Enable the OpenSSH daemon.
     services.openssh.enable = true;
+
+    programs.bash.loginShellInit = ''
+        if [ "$(tty)" = "/dev/tty1" ] && [ -z "$HYPRLAND_INSTANCE_SIGNATURE" ]; then
+            exec start-hyprland
+        fi
+    '';
 }
