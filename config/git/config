@@ -1,0 +1,24 @@
+[alias]
+	sw = "!f() { git switch $(git branch | grep -m 1 \"$1\"); }; f"
+	ci = commit
+	st = status
+	br = "!f() { git branch \"$0\" | cat; }; f"
+	brd = "!f() { \
+		branch_name=\"$1\"; \
+		remote_name=\"${2:-origin}\"; \
+		if !git branch -d \"$branch_name\"; then \
+		  echo \"Error deleting local branch\"; \
+		  return 1; \
+		fi; \
+		if ! git branch -dr \"$remote_name\"/\"$branch_name\"; then \
+		  echo \"Error deleting remote branch\"; \
+		  return 1; \
+		fi; \
+		}; f"
+[pull]
+	rebase=true
+[init]
+	defaultBranch= main
+[user]
+	name = nathES
+	email = nathan.esslinger67@gmail.com

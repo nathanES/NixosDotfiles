@@ -23,4 +23,5 @@
 
     xdg.configFile."alacritty/alacritty.toml".source = ../../config/alacritty/alacritty.toml;
     xdg.configFile."hypr".source = ../../config/hypr;
+    xdg.configFile."git/config".source = ../../config/git/config;
 }

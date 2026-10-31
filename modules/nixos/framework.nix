@@ -2,5 +2,5 @@
 {
     imports = [
         ./common.nix
-    ]
+    ];
 }

@@ -34,11 +34,11 @@ local browser     = "chromium"
 -------------------
 
 -- See https://wiki.hypr.land/Configuring/Basics/Autostart/
- hl.on("hyprland.start", function () 
-   hl.exec_cmd(terminal)
-   hl.exec_cmd("waybar")
+-- hl.on("hyprland.start", function () 
+--   hl.exec_cmd(terminal)
+   -- hl.exec_cmd("waybar")
 --   hl.exec_cmd("waybar & hyprpaper & firefox")
- end)
+ --end)
 
 
 -------------------------------
@@ -129,7 +129,7 @@ hl.curve("almostLinear",   { type = "bezier", points = { {0.5, 0.5},   {0.75, 1}
 hl.curve("quick",          { type = "bezier", points = { {0.15, 0},    {0.1, 1}     } })
 
 -- Default springs
-hl.curve("easy",           { type = "spring", mass = 1, stiffness = 238.1191, dampening = 24.21279333 })
+hl.curve("easy",           { type = "spring", mass = 1, stiffness = 238.1191, damping = 24.21279333 })
 
 hl.animation({ leaf = "global",        enabled = true,  speed = 10,   bezier = "default" })
 hl.animation({ leaf = "border",        enabled = true,  speed = 5.39, bezier = "easeOutQuint" })
