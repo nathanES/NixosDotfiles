@@ -1,7 +1,9 @@
 { config, pkgs, lib, ... }:
 {
-    nixpkgs.config.allowUnfreePredicate = [
+    nixpkgs.config.allowUnfreePackages = [
         "nvidia-x11"
+	"nvidia-settings"
+        "nvidia-persistenced"
     ];
     #
     hardware.graphics.enable = true;

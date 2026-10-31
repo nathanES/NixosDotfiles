@@ -1,6 +1,6 @@
 { config, pkgs, lib, ... }:
 {
-    nixpkgs.config.allowUnfreePredicate = [
+    nixpkgs.config.allowUnfreePackages = [
         "steam"
         "steam-unwrapped"
     ];
