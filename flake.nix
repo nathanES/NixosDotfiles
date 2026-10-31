@@ -8,9 +8,13 @@
             url = "github:nix-community/home-manager";
             inputs.nixpkgs.follows = "nixpkgs";
         };
+	caelestia-shell = {
+	    url = "github:caelestia-dots/shell";
+	    inputs.nixpkgs.follows = "nixpkgs";
+	};
     };
 
-    outputs = { self, nixpkgs, home-manager, ...}:
+    outputs = { self, nixpkgs, home-manager, caelestia-shell, ...}:
     {
         nixosConfigurations = {
             framework = nixpkgs.lib.nixosSystem {
@@ -36,6 +40,9 @@
                         home-manager = {
                             useGlobalPkgs = true;
                             useUserPackages = true;
+			    extraSpecialArgs = {
+			        inherit caelestia-shell;
+	                    };
                             users.nathan = import ./modules/home-manager/desktop.nix;
                             backupFileExtension = "backup";
                         };
