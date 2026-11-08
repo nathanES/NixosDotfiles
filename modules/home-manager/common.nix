@@ -11,6 +11,7 @@
         curl
         alacritty
         ani-cli
+	vlc
     ];
 
 	programs.bash = {
