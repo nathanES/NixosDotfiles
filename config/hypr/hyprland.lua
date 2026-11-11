@@ -34,11 +34,11 @@ local browser     = "chromium"
 -------------------
 
 -- See https://wiki.hypr.land/Configuring/Basics/Autostart/
--- hl.on("hyprland.start", function () 
---   hl.exec_cmd(terminal)
-   -- hl.exec_cmd("waybar")
---   hl.exec_cmd("waybar & hyprpaper & firefox")
- --end)
+hl.on("hyprland.start", function () 
+   hl.exec_cmd(terminal)
+   hl.exec_cmd("caelestia shell -d")
+end)
+ 
 
 
 -------------------------------
@@ -263,16 +263,32 @@ hl.bind(mainMod .. " + SHIFT + D", hl.dsp.exec_cmd(browser .. " --app=https://di
 
 -- Move focus with mainMod + arrow keys
 hl.bind(mainMod .. " + H",  hl.dsp.focus({ direction = "left" }))
+hl.bind(mainMod .. " + SHIFT + H",  hl.dsp.window.swap({ direction = "left" }))
 hl.bind(mainMod .. " + L", hl.dsp.focus({ direction = "right" }))
+hl.bind(mainMod .. " + SHIFT + L", hl.dsp.window.swap({ direction = "right" }))
 hl.bind(mainMod .. " + K",    hl.dsp.focus({ direction = "up" }))
+hl.bind(mainMod .. " + SHIFT + K",    hl.dsp.window.swap({ direction = "up" }))
 hl.bind(mainMod .. " + J",  hl.dsp.focus({ direction = "down" }))
+hl.bind(mainMod .. " + SHIFT + J",  hl.dsp.window.swap({ direction = "down" }))
 
 -- Switch workspaces with mainMod + [0-9]
 -- Move active window to a workspace with mainMod + SHIFT + [0-9]
-for i = 1, 10 do
-    local key = i % 10 -- 10 maps to key 0
-    hl.bind(mainMod .. " + " .. key,             hl.dsp.focus({ workspace = i}))
-    hl.bind(mainMod .. " + SHIFT + " .. key,     hl.dsp.window.move({ workspace = i }))
+local workspaceKeys = {
+	"ampersand",
+	"eacute",
+	"quotedbl",
+	"apostrophe",
+	"parenleft",
+	"minus",
+	"egrave",
+	"underscore",
+	"ccedilla",
+	"agrave"
+}
+
+for i, key in ipairs(workspaceKeys) do
+	hl.bind(mainMod .. " + " .. key,             hl.dsp.focus({ workspace = i}))
+	hl.bind(mainMod .. " + SHIFT + " .. key,     hl.dsp.window.move({ workspace = i }))
 end
 
 -- Example special workspace (scratchpad)

@@ -1,4 +1,7 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
+let 
+    dotfiles = "/home/nathan/NixosDotfiles";
+in
 {
     home.username = "nathan";
     home.homeDirectory = "/home/nathan";
@@ -23,6 +26,6 @@
 	};
 
     xdg.configFile."alacritty/alacritty.toml".source = ../../config/alacritty/alacritty.toml;
-    xdg.configFile."hypr".source = ../../config/hypr;
+    xdg.configFile."hypr".source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/config/hypr";
     xdg.configFile."git/config".source = ../../config/git/config;
 }
