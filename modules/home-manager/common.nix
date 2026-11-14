@@ -1,5 +1,5 @@
 { pkgs, config, ... }:
-let 
+let
     dotfiles = "/home/nathan/NixosDotfiles";
 in
 {
@@ -14,18 +14,18 @@ in
         curl
         alacritty
         ani-cli
-	vlc
+        vlc
     ];
 
 	programs.bash = {
 		enable = true;
 		shellAliases = {
-			nrs = "sudo nixos-rebuild switch";
-			nrsf = "sudo nixos-rebuild switch --flake";
+			nrs = "sudo nixos-rebuild switch --flake $HOME/NixosDotfiles#$(hostname)";
+            nrt = "sudo nixos-rebuild test --flake $HOME/NixosDotfiles#$(hostname)";
 		};
 	};
 
-    xdg.configFile."alacritty/alacritty.toml".source = ../../config/alacritty/alacritty.toml;
+    xdg.configFile."alacritty/alacritty.toml".source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/config/alacritty/alacritty.toml";
     xdg.configFile."hypr".source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/config/hypr";
-    xdg.configFile."git/config".source = ../../config/git/config;
+    xdg.configFile."git/config".source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/config/git/config";
 }
