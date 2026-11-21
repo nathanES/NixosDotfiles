@@ -1,8 +1,7 @@
 { pkgs, ...}:
 {
-    imports = [
-        ./common.nix
-    ];
+    #imports = [
+    #];
 
     # Packages only for framework host
     home.packages = with pkgs; [

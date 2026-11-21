@@ -1,7 +1,6 @@
 { pkgs,caelestia-shell, ...}:
 {
     imports = [
-        ./common.nix
         caelestia-shell.homeManagerModules.default
     ];
 

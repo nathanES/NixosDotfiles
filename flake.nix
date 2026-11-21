@@ -27,9 +27,14 @@
                             useGlobalPkgs = true;
                             useUserPackages = true;
                             extraSpecialArgs = {
-				hostname = "framework";
+                                hostname = "framework";
                             };
-                            users.nathan = import ./modules/home-manager/framework.nix;
+                            users.nathan = {
+                                imports = [
+                                    ./modules/home-manager/common.nix
+                                    ./modules/home-manager/framework.nix
+                                ];
+                            };
                             backupFileExtension = "backup";
                         };
                     }
@@ -46,9 +51,14 @@
                             useUserPackages = true;
                             extraSpecialArgs = {
                                 inherit caelestia-shell;
-				hostname = "desktop";
+                                hostname = "desktop";
                             };
-                            users.nathan = import ./modules/home-manager/desktop.nix;
+                            users.nathan = {
+                                imports = [
+                                    ./modules/home-manager/common.nix
+                                    ./modules/home-manager/desktop.nix
+                                ];
+                            };
                             backupFileExtension = "backup";
                         };
                     }
