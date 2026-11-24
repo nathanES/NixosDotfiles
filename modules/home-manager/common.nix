@@ -40,8 +40,8 @@ in
     xdg.configFile."hypr/common.lua".source  = link "${dotfiles}/config/hypr/common.lua";
     xdg.configFile."hypr/${hostname}.lua".source  = link "${dotfiles}/config/hypr/${hostname}.lua";
     xdg.configFile."hypr/hyprland.lua".text = ''
-    require("${config.home.homeDirectory}/.config/hypr/common.lua")
-    require("${config.home.homeDirectory}/.config/hypr/${hostname}.lua")
+    require("common")
+    require("${hostname}")
     '';
 
     xdg.configFile."git/config".source = link "${dotfiles}/config/git/config";
