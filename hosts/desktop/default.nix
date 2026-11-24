@@ -14,7 +14,7 @@
     environment.systemPackages = with pkgs; [
         vim
         git
-	    chromium
+	chromium
     ];
 
     system.stateVersion = "26.05"; # NEVER delete this line
