@@ -16,6 +16,7 @@ in
         alacritty
         ani-cli
         vlc
+        yazi
     ];
 
 	programs.bash = {
@@ -36,6 +37,12 @@ in
     ]
     '';
 
-    xdg.configFile."hypr".source = link "${dotfiles}/config/hypr";
+    xdg.configFile."hypr/common.lua".source  = link "${dotfiles}/config/hypr/common.lua";
+    xdg.configFile."hypr/${hostname}.lua".source  = link "${dotfiles}/config/hypr/${hostname}.lua";
+    xdg.configFile."hypr/hyprland.lua".text = ''
+    require("common")
+    require("${hostname}")
+    '';
+
     xdg.configFile."git/config".source = link "${dotfiles}/config/git/config";
 }
