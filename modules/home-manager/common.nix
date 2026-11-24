@@ -17,6 +17,7 @@ in
         ani-cli
         vlc
         yazi
+	qutebrowser
     ];
 
 	programs.bash = {

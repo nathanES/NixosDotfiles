@@ -12,7 +12,7 @@
 local terminal = "alacritty"
 local fileManager = "yazi"
 local menu = "hyprlauncher"
-local browser = "chromium"
+local browser = "qutebrowser" 
 
 -------------------
 ---- AUTOSTART ----
@@ -211,16 +211,16 @@ local closeWindowBind = hl.bind(mainMod .. " + W", hl.dsp.window.close())
 hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + F", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(browser))
-hl.bind(mainMod .. " + SHIFT + B", hl.dsp.exec_cmd(browser .. " --incognito"))
-hl.bind(mainMod .. " + M", hl.dsp.exec_cmd(browser .. " --app=https://music.youtube.com"))
-hl.bind(mainMod .. " + A", hl.dsp.exec_cmd(browser .. " --app=https://github.com"))
-hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(browser .. " --app=https://mail.google.com/mail/u/0/#inbox"))
-hl.bind(mainMod .. " + SHIFT + Y", hl.dsp.exec_cmd(browser .. " --app=https://youtube.com"))
-hl.bind(mainMod .. " + SHIFT + T", hl.dsp.exec_cmd(browser .. " --app=https://twitch.tv"))
-hl.bind(mainMod .. " + SHIFT + D", hl.dsp.exec_cmd(browser .. " --app=https://discord.com/channels/@me"))
+hl.bind(mainMod .. " + SHIFT + B", hl.dsp.exec_cmd(browser .. " --target private-window"))
+hl.bind(mainMod .. " + M", hl.dsp.exec_cmd(browser .. " https://music.youtube.com"))
+hl.bind(mainMod .. " + A", hl.dsp.exec_cmd(browser .. " https://github.com"))
+hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(browser .. " https://mail.google.com/mail/u/0/#inbox"))
+hl.bind(mainMod .. " + SHIFT + Y", hl.dsp.exec_cmd(browser .. " https://youtube.com"))
+hl.bind(mainMod .. " + SHIFT + T", hl.dsp.exec_cmd(browser .. " https://twitch.tv"))
+hl.bind(mainMod .. " + SHIFT + D", hl.dsp.exec_cmd(browser .. " https://discord.com/channels/@me"))
+hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd(menu))
 
 -- hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
--- hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
 -- hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 -- hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))    -- dwindle only
 
