@@ -1,8 +1,12 @@
 { config, pkgs, lib, ... }:
 {
     nixpkgs.config.allowUnfreePackages = [
+	"ankama-launcher"
         "steam"
         "steam-unwrapped"
+    ];
+    environment.systemPackages = with pkgs; [
+	ankama-launcher
     ];
 
     programs.steam = {

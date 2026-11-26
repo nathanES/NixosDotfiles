@@ -27,6 +27,7 @@
                             useGlobalPkgs = true;
                             useUserPackages = true;
                             extraSpecialArgs = {
+                                inherit caelestia-shell;
                                 hostname = "framework";
                             };
                             users.nathan = {
