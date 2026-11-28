@@ -20,7 +20,7 @@
                 { id = "lockStatus"; enabled = true; }
                 { id = "network"; enabled = true; }
                 { id = "bluetooth"; enabled = true; }
-                { id = "battery"; enabled = false; }
+                { id = "battery"; enabled = true; }
             ];
             paths.wallpaperDir = "../../wallpapers/";
         };
