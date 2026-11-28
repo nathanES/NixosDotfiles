@@ -30,6 +30,7 @@ config.set('content.javascript.enabled', True, 'qute://*/*')
 config.set('content.local_content_can_access_remote_urls', True, 'file:///home/nathan/.local/share/qutebrowser/userscripts/*')
 config.set('content.local_content_can_access_file_urls', False, 'file:///home/nathan/.local/share/qutebrowser/userscripts/*')
 
+c.url.start_pages = ["https://www.google.com"]
 c.url.searchengines = {
         'DEFAULT': 'https://google.com/search?q={}',
         '!aw': 'https://wiki.archlinux.org/?search={}',
