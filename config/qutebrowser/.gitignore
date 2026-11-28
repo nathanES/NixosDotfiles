@@ -1,0 +1,9 @@
+# Ignore everything by default
+*
+
+# Allowlist files you want to track
+!.gitignore
+!config.py
+!greasemonkey
+!greasemonkey/*
+
