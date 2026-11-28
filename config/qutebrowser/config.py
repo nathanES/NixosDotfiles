@@ -30,14 +30,10 @@ config.set('content.javascript.enabled', True, 'qute://*/*')
 config.set('content.local_content_can_access_remote_urls', True, 'file:///home/nathan/.local/share/qutebrowser/userscripts/*')
 config.set('content.local_content_can_access_file_urls', False, 'file:///home/nathan/.local/share/qutebrowser/userscripts/*')
 
-config.url.searchengines = {
+c.url.searchengines = {
         'DEFAULT': 'https://google.com/search?q={}',
         '!aw': 'https://wiki.archlinux.org/?search={}',
-        '!yt': 'https://www.youtube.com/result?search_query={}',
-        '!ytm': 'https://www.music.youtube.com/search?q={}',
+        '!yt': 'https://www.youtube.com/results?search_query={}',
+        '!ytm': 'https://music.youtube.com/search?q={}',
         '!gh': 'https://github.com/search?o=desc&q={}&s=stars',
-        '!mail': 'https://mail.google.com/mail/u/0/#inbox',
-        '!tw': 'https://twitch.tv',
-        '!dscrd': 'https://discord.com/channels/@me',
-
 }
