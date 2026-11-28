@@ -12,7 +12,7 @@
     boot.loader.efi.canTouchEfiVariables = true;
 
     environment.systemPackages = with pkgs; [
-        vim
+        vim-full
         git
 	chromium
     ];
